@@ -1,0 +1,48 @@
+------------------simple query-------------------
+{
+  usersdata{
+    id
+    firstName
+    email
+  }
+}
+
+
+-------------------argumnet query-----------------
+{
+  usersdataParam(id:4232){
+    id
+    firstName
+    lastName
+    quotes{
+      by
+      name
+    }
+  }
+}
+
+
+---------------------Query variable---------------
+query getuser($userid:Int){
+  usersdataParam(id:$userid){
+    id
+    firstName
+    lastName
+    quotes{
+      by
+      name
+    }
+  }
+  usersdata{
+    id
+    firstName
+    email
+  }
+}
+---------------------variable passing------------
+{
+  "userid": 4232
+}
+
+
+

@@ -1,0 +1,63 @@
+----------------SignupUser----------------------
+mutation SignupUser($newdata:signup){
+  newrecord:SignupUser(signupdata:$newdata){
+    _id
+    email
+    firstName
+    lastName
+    quotes{
+      by
+      name
+    }
+  }
+}
+
+--------------------SigninUser-------------
+mutation SigninUser($login:signin){
+  SignIn(signindata:$login){
+    authtoken
+  }
+}
+
+--------------------addQuote-------------------
+mutation addQuote($quote: newquotes) {
+  addQuote(addQuotes: $quote) {
+    by
+    name
+  }
+}
+
+----------------usersdata----------------------
+query {
+  usersdata{
+    _id
+    email
+    firstName
+    password
+  }
+}
+
+-------------user data with quotes by id------------------
+query {
+  usersdataParam(_id:"634809bcf4391cbf3ca5f785"){
+    _id
+    email
+    firstName
+    password
+    quotes{
+      name
+    }
+  }
+}
+
+----------------quotesdata with user details----------------------------
+query{
+  quotesdata{
+    _id
+    by{
+      email
+      firstName
+    }
+    name
+  }
+}

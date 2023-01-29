@@ -1,0 +1,24 @@
+  //QUERY WITHOUT Apollo client
+  // useEffect(() => {
+  //   fetch('http://localhost:8085', {
+  //     method: 'post',
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     },
+  //     body: JSON.stringify({
+  //       query: `
+  //       query{
+  //         quotesdata{
+  //           _id
+  //           by{
+  //             email
+  //             firstName
+  //             lastName
+  //           }
+  //           name
+  //         }
+  //       }
+  //       `
+  //     })
+  //   }).then(res => res.json()).then(data => console.log(data))
+  // }, [])
